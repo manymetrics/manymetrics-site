@@ -1,0 +1,24 @@
+{{ define "main" }}
+<p>
+ManyMetrics is an open-source event tracking infrastructure based on AWS. Explore the code
+at <a href="https://github.com/manymetrics/manymetrics">this GitHub repo</a>.
+</p>
+
+<p>
+The sole purpose of this website is to be a demo of ManyMetrics which is used to collect analytics. Visit
+<a href="/posts/hello-world">this page</a> to trigger more events.
+</p>
+
+
+<h2>Pages</h2>
+<ul>
+  {{ $pages := .Pages }}
+  {{ if .IsHome }}{{ $pages = .Site.RegularPages }}{{ end }}
+  {{ range (where $pages "Section" "!=" "") }}
+  <li>
+    <a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a>
+  </li>
+  {{ end }}
+</ul>
+
+{{ end}}

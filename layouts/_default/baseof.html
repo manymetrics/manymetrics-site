@@ -1,10 +1,9 @@
 <!doctype html>
 <html>
     <head>
-	<meta name="generator" content="Hugo 0.135.0"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>ManyMetrics</title>
+        <title>{{ .Site.Title }}</title>
         <style>
             body {
                 font-family: Arial, sans-serif;
@@ -28,7 +27,7 @@
   <body class="container">
     <header>
         <h1>
-            <a href="/">ManyMetrics</a>
+            <a href="/">{{ .Site.Title }}</a>
             <a href="https://github.com/manymetrics/manymetrics">
                 <img style="float: right; margin-top: 0.5em;" src="https://img.shields.io/github/stars/manymetrics/manymetrics" />
             </a>
@@ -36,30 +35,7 @@
     </header>
 
     <main>
-      
-<p>
-ManyMetrics is an open-source event tracking infrastructure based on AWS. Explore the code
-at <a href="https://github.com/manymetrics/manymetrics">this GitHub repo</a>.
-</p>
-
-<p>
-The sole purpose of this website is to be a demo of ManyMetrics which is used to collect analytics. Visit
-<a href="/posts/hello-world">this page</a> to trigger more events.
-</p>
-
-
-<h2>Pages</h2>
-<ul>
-  
-  
-  
-  <li>
-    <a href="/posts/hello-world/">Hello World</a>
-  </li>
-  
-</ul>
-
-
+      {{ block "main" . }}{{ end }}
     </main>
 
   </body>
